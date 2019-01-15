@@ -191,7 +191,7 @@ class Group:
         env['GIT_AUTHOR_EMAIL'] = env['GIT_COMMITTER_EMAIL'] = str(getUserEmail(user))
         comment = self.comment if self.comment.strip() != "" else "<empty message>"
         try:
-            git_exec(['commit', '-m', comment.encode(ENCODING)], env=env)
+            git_exec(['commit', '-m', comment], env=env)
         except Exception as e:
             if search('nothing( added)? to commit', e.args[0]) == None:
                 raise

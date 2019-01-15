@@ -96,7 +96,7 @@ def decodeString(encoding, encodestr):
     try:
         return encodestr.decode(encoding)
     except UnicodeDecodeError as e:
-        print >> sys.stderr, encodestr, ":", e
+        print(sys.stderr, encodestr, ":", e)
         return encodestr.decode(encoding, "ignore")
 
 def tag(tag, id="HEAD"):
